@@ -1,3 +1,61 @@
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonPink, function (sprite, location) {
+    tiles.setTilemap(tilemap`level8`)
+    game.setDialogTextColor(2)
+    game.setDialogFrame(img`
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+        `)
+    game.splash("Start level 3")
+    tiles.setTilemap(tilemap`level5`)
+    tiles.placeOnRandomTile(mySprite, sprites.builtin.coral5)
+    tiles.placeOnRandomTile(Enemy1, sprites.dungeon.floorDark5)
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.swamp.swampTile1, function (sprite, location) {
+    tiles.setTilemap(tilemap`level14`)
+    game.setDialogTextColor(2)
+    game.setDialogFrame(img`
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+        `)
+    game.splash("Secret Level")
+    tiles.setTilemap(tilemap`level15`)
+    tiles.placeOnRandomTile(mySprite, sprites.swamp.swampTile3)
+    tiles.placeOnTile(Enemy1, tiles.getTileLocation(100000, 10000))
+})
+controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
+    animation.runImageAnimation(
+    mySprite,
+    assets.animation`assetname`,
+    100,
+    true
+    )
+})
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorOpenEast, function (sprite, location) {
     tiles.setTilemap(tilemap`level12`)
     game.setDialogTextColor(2)
@@ -18,12 +76,8 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorOpenEast, function (s
         2 f f f f f f f f f f f f f 2 
         2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
         `)
-    game.showLongText("Narrator: You vision has been damaged", DialogLayout.Full)
-    game.showLongText("Narrator: In this level you will now be unable to see walls", DialogLayout.Full)
-    game.showLongText("Narrator: Remeber this code", DialogLayout.Full)
-    game.showLongText("Narrator: e s e s w s e s w s n w s w n w s e n e n e s w s e", DialogLayout.Full)
     game.splash("Start level 4")
-    tiles.setTilemap(tilemap`level11`)
+    tiles.setTilemap(tilemap`level13`)
     tiles.placeOnRandomTile(mySprite, sprites.dungeon.doorOpenWest)
     tiles.placeOnTile(Enemy1, tiles.getTileLocation(100000, 10000))
 })
@@ -51,10 +105,28 @@ info.onCountdownEnd(function () {
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairEast, function (sprite, location) {
     tiles.setTilemap(tilemap`level6`)
+    game.setDialogTextColor(2)
+    game.setDialogFrame(img`
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+        `)
     game.splash("Start Level 2")
     tiles.setTilemap(tilemap`level2`)
     tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairWest)
-    tiles.placeOnRandomTile(Enemy1, sprites.builtin.forestTiles10)
+    tiles.placeOnRandomTile(Enemy1, sprites.castle.tileGrass3)
 })
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
     game.setDialogFrame(img`
@@ -80,10 +152,28 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSp
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.builtin.coral0, function (sprite, location) {
     tiles.setTilemap(tilemap`level8`)
+    game.setDialogTextColor(2)
+    game.setDialogFrame(img`
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+        `)
     game.splash("Start level 3")
     tiles.setTilemap(tilemap`level5`)
     tiles.placeOnRandomTile(mySprite, sprites.builtin.coral5)
-    tiles.placeOnRandomTile(Enemy1, sprites.dungeon.floorDark3)
+    tiles.placeOnRandomTile(Enemy1, sprites.dungeon.floorDark5)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairLarge, function (sprite, location) {
     game.setDialogTextColor(2)
@@ -131,6 +221,31 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairLarge, function (spr
         `)
     game.showLongText("Made by: Gurshan Singh Sidhu", DialogLayout.Full)
     game.over(true, effects.smiles)
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonTeal, function (sprite, location) {
+    tiles.setTilemap(tilemap`level6`)
+    game.setDialogTextColor(2)
+    game.setDialogFrame(img`
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+        `)
+    game.splash("Start Level 2")
+    tiles.setTilemap(tilemap`level2`)
+    tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairWest)
+    tiles.placeOnRandomTile(Enemy1, sprites.castle.tileGrass3)
 })
 let Enemy1: Sprite = null
 let mySprite: Sprite = null
@@ -201,5 +316,8 @@ Enemy1 = sprites.create(img`
     . . . . c c . . . c c . . . . . 
     . . . . c c . . . c c . . . . . 
     `, SpriteKind.Enemy)
-tiles.placeOnRandomTile(Enemy1, sprites.dungeon.buttonOrange)
+tiles.placeOnRandomTile(Enemy1, assets.tile`myTile`)
 Enemy1.follow(mySprite, 75)
+forever(function () {
+    music.playMelody("G F G A - F E D ", 120)
+})

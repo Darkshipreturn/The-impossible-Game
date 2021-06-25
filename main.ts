@@ -1,5 +1,5 @@
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonPink, function (sprite, location) {
-    tiles.setTilemap(tilemap`level8`)
+    tiles.setTilemap(tilemap`level6`)
     game.setDialogTextColor(2)
     game.setDialogFrame(img`
         2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
@@ -18,12 +18,13 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonPink, function (spr
         2 f f f f f f f f f f f f f 2 
         2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
         `)
-    game.splash("Start level 3")
-    tiles.setTilemap(tilemap`level5`)
-    tiles.placeOnRandomTile(mySprite, sprites.builtin.coral5)
-    tiles.placeOnRandomTile(Enemy1, sprites.dungeon.floorDark5)
+    game.showLongText("Hey Player I would reccomend you to stop PLEASE!", DialogLayout.Bottom)
+    game.splash("Start Level 2")
+    tiles.setTilemap(tilemap`level2`)
+    tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairWest)
+    tiles.placeOnRandomTile(Enemy1, sprites.castle.tileGrass3)
 })
-scene.onOverlapTile(SpriteKind.Player, sprites.swamp.swampTile1, function (sprite, location) {
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile1`, function (sprite, location) {
     tiles.setTilemap(tilemap`level14`)
     game.setDialogTextColor(2)
     game.setDialogFrame(img`
@@ -76,6 +77,10 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorOpenEast, function (s
         2 f f f f f f f f f f f f f 2 
         2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
         `)
+    game.showLongText("Narrator: ARGH!", DialogLayout.Full)
+    game.showLongText("Narrator: KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER!", DialogLayout.Full)
+    game.showLongText("SYSTEM: MALITIOUS SOFTWARE DETECTED STARTING REBOOT ", DialogLayout.Full)
+    game.showLongText("Narrator: I'll be back", DialogLayout.Full)
     game.splash("Start level 4")
     tiles.setTilemap(tilemap`level13`)
     tiles.placeOnRandomTile(mySprite, sprites.dungeon.doorOpenWest)
@@ -123,6 +128,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairEast, function (spri
         2 f f f f f f f f f f f f f 2 
         2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
         `)
+    game.showLongText("Hey Player I would reccomend you to stop PLEASE!", DialogLayout.Bottom)
     game.splash("Start Level 2")
     tiles.setTilemap(tilemap`level2`)
     tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairWest)
@@ -170,6 +176,33 @@ scene.onOverlapTile(SpriteKind.Player, sprites.builtin.coral0, function (sprite,
         2 f f f f f f f f f f f f f 2 
         2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
         `)
+    game.showLongText("STOP PLAYING I WILL...", DialogLayout.Bottom)
+    game.splash("Start level 3")
+    tiles.setTilemap(tilemap`level5`)
+    tiles.placeOnRandomTile(mySprite, sprites.builtin.coral5)
+    tiles.placeOnRandomTile(Enemy1, sprites.dungeon.floorDark5)
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonOrange, function (sprite, location) {
+    tiles.setTilemap(tilemap`level8`)
+    game.setDialogTextColor(2)
+    game.setDialogFrame(img`
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 f f f f f f f f f f f f f 2 
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+        `)
+    game.showLongText("STOP PLAYING I WILL...", DialogLayout.Bottom)
     game.splash("Start level 3")
     tiles.setTilemap(tilemap`level5`)
     tiles.placeOnRandomTile(mySprite, sprites.builtin.coral5)
@@ -194,11 +227,12 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairLarge, function (spr
         2 f f f f f f f f f f f f f 2 
         2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
         `)
-    game.showLongText("Narrator: Well you finally made it but at what cost?", DialogLayout.Full)
+    game.showLongText("Narrator: Well you made it but at what cost?", DialogLayout.Full)
     game.showLongText("Narrator: Well?", DialogLayout.Full)
     game.showLongText("Narrator: ...", DialogLayout.Full)
-    game.showLongText("Narrator: I'm not really sure what your saying but at least you made it to the end", DialogLayout.Full)
-    game.showLongText("Narrator: If I only wished to be free...", DialogLayout.Full)
+    game.showLongText("Narrator: I'm not sure what your saying but at least you made it to the end", DialogLayout.Full)
+    game.showLongText("Narrator: If only I was to be free Like you", DialogLayout.Full)
+    game.showLongText("SYSTEM: WARNING CAMOFLAGE FAIL, TURNING SYSTEM OFF NOW", DialogLayout.Full)
     game.showLongText("Rob: no No NO... Guess you now know that I was the narrator huh?", DialogLayout.Full)
     game.showLongText("Rob: Nevermind I got what I want, Goodbye Player", DialogLayout.Full)
     game.setDialogTextColor(4)
@@ -223,7 +257,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairLarge, function (spr
     game.over(true, effects.smiles)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonTeal, function (sprite, location) {
-    tiles.setTilemap(tilemap`level6`)
+    tiles.setTilemap(tilemap`level12`)
     game.setDialogTextColor(2)
     game.setDialogFrame(img`
         2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
@@ -242,10 +276,14 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonTeal, function (spr
         2 f f f f f f f f f f f f f 2 
         2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
         `)
-    game.splash("Start Level 2")
-    tiles.setTilemap(tilemap`level2`)
-    tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairWest)
-    tiles.placeOnRandomTile(Enemy1, sprites.castle.tileGrass3)
+    game.showLongText("Narrator: ARGH!", DialogLayout.Full)
+    game.showLongText("Narrator: KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER! KILL THE PLAYER!", DialogLayout.Full)
+    game.showLongText("SYSTEM: MALITIOUS SOFTWARE DETECTED STARTING REBOOT ", DialogLayout.Full)
+    game.showLongText("Narrator: I'll be back", DialogLayout.Full)
+    game.splash("Start level 4")
+    tiles.setTilemap(tilemap`level13`)
+    tiles.placeOnRandomTile(mySprite, sprites.dungeon.doorOpenWest)
+    tiles.placeOnTile(Enemy1, tiles.getTileLocation(100000, 10000))
 })
 let Enemy1: Sprite = null
 let mySprite: Sprite = null
@@ -267,15 +305,15 @@ game.setDialogFrame(img`
     2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
     `)
 game.setDialogTextColor(2)
-game.showLongText("Welcome to Run for Freedom", DialogLayout.Full)
+game.showLongText("Welcome to The impossible game", DialogLayout.Full)
 game.showLongText("Narrator: You'll be playing as the robot called 'Rob'", DialogLayout.Full)
 game.showLongText("Narrator: The Objective of the game is to escape the facality", DialogLayout.Full)
 game.showLongText("Narrator: There are a series of 4 levels", DialogLayout.Full)
 game.showLongText("Narrator: There also will be another robot that will stop you from escaping", DialogLayout.Full)
 game.showLongText("Narrator: There will be a timer that will show how much battery that you have left", DialogLayout.Full)
-game.showLongText("Narrator: Goodbye for now good luck Hero!", DialogLayout.Full)
+game.showLongText("Narrator: Goodbye for now good luck Hero! Or not!", DialogLayout.Full)
 game.splash("Start Level 1")
-info.startCountdown(300)
+info.startCountdown(600)
 mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . f . . . . . . . f . . . . 
@@ -316,8 +354,5 @@ Enemy1 = sprites.create(img`
     . . . . c c . . . c c . . . . . 
     . . . . c c . . . c c . . . . . 
     `, SpriteKind.Enemy)
-tiles.placeOnRandomTile(Enemy1, assets.tile`myTile`)
 Enemy1.follow(mySprite, 75)
-forever(function () {
-    music.playMelody("G F G A - F E D ", 120)
-})
+tiles.placeOnTile(Enemy1, tiles.getTileLocation(100000, 10000))

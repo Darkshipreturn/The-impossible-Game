@@ -1,8 +1,9 @@
 {
-    "name": "Run For Freedom",
+    "name": "The Impossible game",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "corgio": "*"
     },
     "files": [
         "main.blocks",
